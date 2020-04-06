@@ -368,8 +368,8 @@ else
         tasksel install ${ubuntu_bundles} && \
         apt install -y ${ubuntu_packages} && \
         apt clean && \
-        wget --header \\\"Authorization: token ${param_token}\\\" ${param_bootstrapurl}/prebuilt/linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
-        wget --header \\\"Authorization: token ${param_token}\\\" ${param_bootstrapurl}/prebuilt/linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        wget --header \\\"Authorization: token ${param_token}\\\" ${param_basebranch}/prebuilt/linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        wget --header \\\"Authorization: token ${param_token}\\\" ${param_basebranch}/prebuilt/linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
         dpkg -i linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
         dpkg -i linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
         update-grub\"' && \
