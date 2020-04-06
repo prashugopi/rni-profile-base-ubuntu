@@ -332,7 +332,12 @@ if [[ $param_parttype == 'efi' ]]; then
         apt install -y tasksel && \
         tasksel install ${ubuntu_bundles} && \
         apt install -y ${ubuntu_packages} && \
-        apt clean\"' && \
+        apt clean && \
+        wget --header \\\"Authorization: token ${param_token}\\\" ${param_bootstrapurl}/prebuilt/linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        wget --header \\\"Authorization: token ${param_token}\\\" ${param_bootstrapurl}/prebuilt/linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        dpkg -i linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        dpkg -i linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        update-grub\"' && \
         wget --header \"Authorization: token ${param_token}\" -O - ${param_basebranch}/files/etc/fstab | sed -e \"s#ROOT#${ROOT_PARTITION}#g\" | sed -e \"s#BOOT#${BOOT_PARTITION}#g\" | sed -e \"s#SWAP#${SWAP_PARTITION}#g\" > $ROOTFS/etc/fstab && \
         echo \"${EFI_PARTITION}  /boot/efi       vfat    umask=0077      0       1\" >> $ROOTFS/etc/fstab" \
         "$TMP/provisioning.log"
@@ -362,7 +367,12 @@ else
         apt install -y tasksel && \
         tasksel install ${ubuntu_bundles} && \
         apt install -y ${ubuntu_packages} && \
-        apt clean\"' && \
+        apt clean && \
+        wget --header \\\"Authorization: token ${param_token}\\\" ${param_bootstrapurl}/prebuilt/linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        wget --header \\\"Authorization: token ${param_token}\\\" ${param_bootstrapurl}/prebuilt/linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        dpkg -i linux-image-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        dpkg -i linux-headers-4.19.65-idv2.1er6+_2.1.0_amd64.deb && \
+        update-grub\"' && \
         wget --header \"Authorization: token ${param_token}\" -O - ${param_basebranch}/files/etc/fstab | sed -e \"s#ROOT#${ROOT_PARTITION}#g\" | sed -e \"s#BOOT#${BOOT_PARTITION}#g\" | sed -e \"s#SWAP#${SWAP_PARTITION}#g\" > $ROOTFS/etc/fstab" \
         "$TMP/provisioning.log"
 fi
