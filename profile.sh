@@ -29,7 +29,7 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
 run "Installing cic " \
     "mkdir -p $ROOTFS/opt/cic && \
      cd $ROOTFS/opt/cic && \
-     wget http://${PROVISIONER}${param_httppath}/files/cic.tar.gz && \
+     wget http://${PROVISIONER}${param_httppath}/cic.tar.gz && \
      tar -xvzf cic.tar.gz" \
     ${PROVISION_LOG}
 
