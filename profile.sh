@@ -25,3 +25,11 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     tasksel install ${ubuntu_bundles} && \
     apt install -y ${ubuntu_packages}\"'" \
     ${PROVISION_LOG}
+
+run "Installing cic " \
+    "mkdir -p $ROOTFS/opt/cic && \
+     cd $ROOTFS/opt/cic && \
+     wget http://${PROVISIONER}${param_httppath}/files/cic.tar.gz && \
+     tar -xvzf cic.tar.gz" \
+    ${PROVISION_LOG}
+
