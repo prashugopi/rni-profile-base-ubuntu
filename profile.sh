@@ -23,7 +23,6 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     export DEBIAN_FRONTEND=noninteractive && \
     apt install -y tasksel && \
     tasksel install ${ubuntu_bundles} && \
-    apt install -y --install-recommends linux-generic-hwe-18.04 && \
     apt install -y ${ubuntu_packages}\"'" \
     ${PROVISION_LOG}
 
