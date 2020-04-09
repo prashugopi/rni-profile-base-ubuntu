@@ -332,7 +332,7 @@ if [[ $param_parttype == 'efi' ]]; then
         apt install -y tasksel && \
         tasksel install ${ubuntu_bundles} && \
         apt install -y ${ubuntu_packages} && \
-	add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main restricted' && \
+	add-apt-repository \\\'deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main restricted\\\' && \
 	apt-get update && \
 	apt-get install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04 && \
         apt clean\"' && \
