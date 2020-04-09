@@ -10,7 +10,7 @@ source /opt/bootstrap/functions
 
 # --- Config
 ubuntu_bundles="ubuntu-desktop openssh-server"
-ubuntu_packages="net-tools vim software-properties-common apt-transport-https wget"
+ubuntu_packages="net-tools vim software-properties-common apt-transport-https wget curl"
 
 # --- Install Extra Packages ---
 run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
@@ -23,6 +23,7 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     export DEBIAN_FRONTEND=noninteractive && \
     apt install -y tasksel && \
     tasksel install ${ubuntu_bundles} && \
+    apt install -y --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04 && \
     apt install -y ${ubuntu_packages}\"'" \
     ${PROVISION_LOG}
 
