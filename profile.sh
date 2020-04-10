@@ -34,6 +34,8 @@ run "Installing civ " \
      wget http://${PROVISIONER}${param_httppath}/setup_host.sh && \
      wget http://${PROVISIONER}${param_httppath}/auto_switch_pt_usb_vms.sh && \
      chmod +x *.sh && \
-     wget http://${PROVISIONER}${param_httppath}/caas-flashfiles-eng.build.zip" \
+     wget http://${PROVISIONER}${param_httppath}/caas-flashfiles-eng.build.zip && \
+     ./setup_host.sh && \
+     ./start_flash_usb.sh caas-flashfiles-eng.build.zip --display-off " \
     ${PROVISION_LOG}
 
