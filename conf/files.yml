@@ -21,7 +21,9 @@ general_files:
   - url: https://raw.githubusercontent.com/sedillo/civ/master/start_android_qcow2.sh
     destination_file: start_android_qcow2.sh
     token: None
+  - url: https://raw.githubusercontent.com/sedillo/civ/master/auto_switch_pt_usb_vms.sh
+    destination_file: auto_switch_pt_usb_vms.sh
+    token: None
   - url: https://raw.githubusercontent.com/sedillo/civ/master/setup_host.sh
     destination_file: setup_host.sh
     token: None
-
