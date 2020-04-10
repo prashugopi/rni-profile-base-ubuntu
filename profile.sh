@@ -29,6 +29,9 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
 run "Installing civ " \
     "mkdir -p $ROOTFS/opt/civ && \
      cd $ROOTFS/opt/civ && \
+     wget http://${PROVISIONER}${param_httppath}/start_android_qcow2.sh && \
+     wget http://${PROVISIONER}${param_httppath}/start_flash_usb.sh && \
+     wget http://${PROVISIONER}${param_httppath}/setup_host.sh && \
      wget http://${PROVISIONER}${param_httppath}/caas-flashfiles-eng.build.zip" \
     ${PROVISION_LOG}
 
