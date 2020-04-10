@@ -21,8 +21,13 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     LANG=C.UTF-8 chroot /target/root sh -c \
     \"$(echo ${INLINE_PROXY} | sed "s#'#\\\\\"#g") export TERM=xterm-color && \
     export DEBIAN_FRONTEND=noninteractive && \
+    mount ${BOOT_PARTITION} /boot && \
+    mount ${EFI_PARTITION} /boot/efi && \
     apt install -y tasksel && \
     tasksel install ${ubuntu_bundles} && \
+    add-apt-repository \\\"deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main restricted\\\" && \
+    apt-get update && \
+    apt-get install -y --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04 && \
     apt install -y ${ubuntu_packages}\"'" \
     ${PROVISION_LOG}
 
