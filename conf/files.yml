@@ -12,7 +12,7 @@
 # as headers. These files will be accessible at
 # http://@@EDGEBUILDER_IP@@/files/*
 general_files:
-  - url: https://github.com/projectceladon/celadon-binary/raw/master/CIC_01.20.01.12_A09/cic-aic-CC0000105.tar.gz
-    destination_file: cic.tar.gz
+  - url: https://github.com/projectceladon/celadon-binary/raw/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
+    destination_file: caas-flashfiles-eng.build.zip
     token: None
 

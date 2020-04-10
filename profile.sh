@@ -26,10 +26,9 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     apt install -y ${ubuntu_packages}\"'" \
     ${PROVISION_LOG}
 
-run "Installing cic " \
-    "mkdir -p $ROOTFS/opt/cic && \
-     cd $ROOTFS/opt/cic && \
-     wget http://${PROVISIONER}${param_httppath}/cic.tar.gz && \
-     tar -xvzf cic.tar.gz" \
+run "Installing civ " \
+    "mkdir -p $ROOTFS/opt/civ && \
+     cd $ROOTFS/opt/civ && \
+     wget http://${PROVISIONER}${param_httppath}/caas-flashfiles-eng.build.zip" \
     ${PROVISION_LOG}
 
