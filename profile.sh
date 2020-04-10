@@ -21,8 +21,6 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     LANG=C.UTF-8 chroot /target/root sh -c \
     \"$(echo ${INLINE_PROXY} | sed "s#'#\\\\\"#g") export TERM=xterm-color && \
     export DEBIAN_FRONTEND=noninteractive && \
-    mount ${BOOT_PARTITION} /boot && \
-    mount ${EFI_PARTITION} /boot/efi && \
     apt install -y tasksel && \
     tasksel install ${ubuntu_bundles} && \
     apt install -y ${ubuntu_packages}\"'" \
