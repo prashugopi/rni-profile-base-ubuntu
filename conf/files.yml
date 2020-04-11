@@ -27,3 +27,6 @@ general_files:
   - url: https://raw.githubusercontent.com/sedillo/civ/master/setup_host.sh
     destination_file: setup_host.sh
     token: None
+  - url: https://download.qemu.org/qemu-4.2.0.tar.xz
+    destination_file: qemu-4.2.0.tar.xz
+    token: None

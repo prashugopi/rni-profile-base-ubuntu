@@ -33,6 +33,7 @@ run "Installing civ " \
      wget http://${PROVISIONER}${param_httppath}/start_flash_usb.sh && \
      wget http://${PROVISIONER}${param_httppath}/setup_host.sh && \
      wget http://${PROVISIONER}${param_httppath}/auto_switch_pt_usb_vms.sh && \
+     wget http://${PROVISIONER}${param_httppath}/qemu-4.2.0.tar.xz && \
      chmod +x *.sh && \
      wget http://${PROVISIONER}${param_httppath}/caas-flashfiles-eng.build.zip " \
     ${PROVISION_LOG}
