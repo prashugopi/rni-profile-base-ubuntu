@@ -12,7 +12,8 @@ source /opt/bootstrap/functions
 ubuntu_bundles="ubuntu-desktop openssh-server"
 ubuntu_packages="net-tools vim software-properties-common apt-transport-https wget curl \
 	git libfdt-dev libpixman-1-dev libssl-dev vim socat libsdl2-dev libspice-server-dev autoconf libtool xtightvncviewer tightvncserver x11vnc uuid-runtime uuid uml-utilities bridge-utils python-dev liblzma-dev libc6-dev libegl1-mesa-dev libepoxy-dev libdrm-dev libgbm-dev libaio-dev libusb-1.0.0-dev libgtk-3-dev bison libcap-dev libattr1-dev \
-	wget mtools ovmf dmidecode python3-usb python3-pyudev"
+	wget mtools ovmf dmidecode python3-usb python3-pyudev \
+	uuid-dev nasm acpidump iasl"
 
 # --- Install Extra Packages ---
 run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
