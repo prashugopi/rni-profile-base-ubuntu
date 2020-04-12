@@ -29,11 +29,10 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     ${PROVISION_LOG}
 
 run "Installing civ " \
-    "mkdir -p $ROOTFS/opt/civ && \
-     cd $ROOTFS/opt/civ && \
+    "cd $ROOTFS/opt && \
      git clone https://github.com/sedillo/civ.git && \
+     cd $ROOTFS/opt/civ && \
      wget http://${PROVISIONER}${param_httppath}/qemu-4.2.0.tar.xz && \
-     chmod +x *.sh && \
      wget http://${PROVISIONER}${param_httppath}/caas-flashfiles-eng.build.zip " \
     ${PROVISION_LOG}
 
