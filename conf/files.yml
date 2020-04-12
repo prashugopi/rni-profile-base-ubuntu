@@ -15,18 +15,6 @@ general_files:
   - url: https://github.com/projectceladon/celadon-binary/raw/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
     destination_file: caas-flashfiles-eng.build.zip
     token: None
-  - url: https://raw.githubusercontent.com/sedillo/civ/master/start_flash_usb.sh
-    destination_file: start_flash_usb.sh
-    token: None
-  - url: https://raw.githubusercontent.com/sedillo/civ/master/start_android_qcow2.sh
-    destination_file: start_android_qcow2.sh
-    token: None
-  - url: https://raw.githubusercontent.com/sedillo/civ/master/auto_switch_pt_usb_vms.sh
-    destination_file: auto_switch_pt_usb_vms.sh
-    token: None
-  - url: https://raw.githubusercontent.com/sedillo/civ/master/setup_host.sh
-    destination_file: setup_host.sh
-    token: None
   - url: https://download.qemu.org/qemu-4.2.0.tar.xz
     destination_file: qemu-4.2.0.tar.xz
     token: None
