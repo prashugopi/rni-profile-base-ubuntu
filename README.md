@@ -1,10 +1,25 @@
-# Ubuntu OS Profile
+# GVTg instructions
 
-Intended to be used with Retail Node Installer and Ubuntu custom profiles.
-Please refer to Ubuntu OS Profile project [documentation](https://github.com/intel/rni-profile-base-ubuntu/blob/desktop/README.md) in order to deploy Ubuntu.
+## Prerequisites
+These instructions are meant to be executed once you have a fully operation RNI setup
 
-## Known Limitations
+## Configuration file
+Edit the file /opt/rni/conf/config.yml
 
-* Currently does not support full disk encryption
-* Currently does not install Secure Boot features
-* Currently base profile intended to be used along with custom profiles.
+Add the following:
+```
+  - git_remote_url: https://github.com/sedillo/rni-profile-base-ubuntu.git
+    profile_branch: desktop
+    profile_base_branch: gvt-base
+    git_username: ""
+    git_token: ""
+    # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
+    name: GVTg_Ubuntu_18.04_Desktop
+    custom_git_arguments: --depth=1
+```
+
+Rebuild RNI 
+```
+./build.sh -s
+./run.sh
+```
