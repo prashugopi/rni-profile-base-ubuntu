@@ -10,11 +10,11 @@ Add the following:
 ```
   - git_remote_url: https://github.com/sedillo/rni-profile-base-ubuntu.git
     profile_branch: desktop
-    profile_base_branch: gvt-base
+    profile_base_branch: gvt-base-5.4
     git_username: ""
     git_token: ""
     # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
-    name: GVTg_Ubuntu_18.04_Desktop
+    name: GVTg_5.4_Ubuntu_18.04_Desktop
     custom_git_arguments: --depth=1
 ```
 
