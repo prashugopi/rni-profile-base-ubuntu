@@ -25,3 +25,9 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
     tasksel install ${ubuntu_bundles} && \
     apt install -y ${ubuntu_packages}\"'" \
     ${PROVISION_LOG}
+
+# --- Install WLC files ---
+run "Installing WLC on Ubuntu ${param_ubuntuversion} ${PROVISIONER}${param_httppath}" \
+    "mkdir -p $ROOTFS/opt/wlc && \
+      " \
+    ${PROVISION_LOG}
