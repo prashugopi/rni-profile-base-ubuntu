@@ -1,12 +1,11 @@
-# Ubuntu OS Profile
+# Workload Consolidation (WLC) Profile
 
-<img align="right" src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png">
-
-Intended to be used with Retail Node Installer and Ubuntu base profile, this Ubuntu OS profile contains a few files that ultimately will install Ubuntu OS to disk.
+Intended to be used with Retail Node Installer and Ubuntu base profile, this Workload Consolidation profile contains files that will install Ubuntu OS to disk.
 
 ## Software Stack in this profile
 
 * Ubuntu Linux w/ Docker
+* All WLC related files
 
 ## Target Device Prerequisites
 
@@ -19,6 +18,45 @@ Intended to be used with Retail Node Installer and Ubuntu base profile, this Ubu
 * 4 GB of RAM
 
 ## Getting Started
+
+### Configuration File 
+
+Edit configuration file at conf/config.yml
+
+```
+profiles:
+  - git_remote_url: https://github.com/sedillo/rni-profile-base-ubuntu.git
+    profile_branch: wlc
+    profile_base_branch: gvt-base-5.4
+    git_username: ""
+    git_token: ""
+    # This is the name that will be shown on the PXE menu (NOTE: No Spaces)
+    name: WLC
+    custom_git_arguments: --depth=1
+```
+### Adding WLC Files
+
+Add this environment variable to your RNI folder, for example
+```
+export RNIPATH=/opt/rni
+cd $RNIPATH
+```
+In that folder find the files folder that corresponds to WLC
+We will create a subfolder called wlc which will be installed at /opt/wlc
+```
+find . -name files
+export WLCPATH=$RNIPATH/data/usr/share/nginx/html/profile/WLC_base/files/wlc
+mkdir -p $WLCPATH
+```
+
+At this point fill in contents into wlc that will be installed onto target.
+
+### For example Windows
+```
+mkdir -p $WLCPATH/windows
+mv windows.qcow2 $WLCPATH/windows/
+mv windows_start.sh $WLCPATH/windows/
+```
 
 **A necessary prerequisite to using this profile is having an Retail Node Installer deployed**. Please refer to Retail Node Installer project documentation for [installation](https://github.com/intel/retail-node-installer) in order to deploy it.
 
