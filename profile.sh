@@ -28,6 +28,5 @@ run "Installing Extra Packages on Ubuntu ${param_ubuntuversion}" \
 
 # --- Install WLC files ---
 run "Installing WLC on Ubuntu ${param_ubuntuversion} ${PROVISIONER}${param_httppath}" \
-    "mkdir -p $ROOTFS/opt/wlc && \
-      " \
+    "mkdir -p $ROOTFS/opt/wlc " \
     ${PROVISION_LOG}
