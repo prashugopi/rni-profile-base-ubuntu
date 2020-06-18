@@ -34,7 +34,7 @@ run "Installing WLC on Ubuntu ${param_basebranch} ${PROVISIONER}${param_httppath
     ${PROVISION_LOG}
 
 # --- Install qemu files ---
-run "Installing qemu on Ubuntu ${param_basebranch} ${PROVISIONER}${param_httppath}" \
+run "Installing qemu on Ubuntu ${param_basebranch} ${PROVISIONER} ${param_httppath} ${param_bootstrap} ${param_bootstrapurl} " \
     "mkdir -p $ROOTFS/opt/qemu && \
      cd $ROOTFS/opt/qemu && \
      wget ${param_basebranch}/prebuilt/qemu420.tar.gz" \
