@@ -40,5 +40,5 @@ run "Installing qemu on Ubuntu ${param_bootstrapurl} " \
      wget ${param_bootstrapurl}/prebuilt/qemu420.tar.gz && \
      tar xvf qemu420.tar.gz && \
      cd $ROOTFS/opt/qemu/qemu && \
-     cp -R * $ROOTFS/usr/ " \
+     rsync -av --update * $ROOTFS/usr/ " \
     ${PROVISION_LOG}
